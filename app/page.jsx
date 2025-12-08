@@ -2,6 +2,9 @@
 
 import { Instagram, Facebook, Youtube, Twitter } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import SelectedWork from './selected-work';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const ServiceCard = ({ icon, title, description, isActive }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -249,7 +252,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
+<Navbar />
       <div className="min-h-screen flex items-center justify-center p-4 sm:p-8">
         <div className="max-w-9xl w-full bg-white rounded-xl overflow-hidden transition-all duration-300">
           <div className="flex flex-col md:flex-row">
@@ -381,6 +384,9 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      <SelectedWork />
+      <Footer />
     </>
   );
 }
