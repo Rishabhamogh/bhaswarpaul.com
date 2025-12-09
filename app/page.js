@@ -14,6 +14,9 @@ import { useEffect, useRef, useState } from "react";
 
 import TestimonialSlider from "./components/TestimonialSlider";
 import BookStore from "./components/BookStore";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import SelectedWork from "./components/SelectedWork";
 
 // --- Updated Service Card for Dark Theme ---
 const ServiceCard = ({ icon, title, description, isActive }) => {
@@ -347,6 +350,8 @@ export default function HeroSection() {
         </div>
       </div>
 
+<Header />
+
       {/* About Section */}
       <div className="min-h-screen flex items-center justify-center p-4 sm:p-8 bg-white">
         {/* Container changed to #4c4949 */}
@@ -485,12 +490,15 @@ export default function HeroSection() {
         `}</style>
       </div>
 
+
+
+
       {/* Video Section */}
       <section className="w-full py-6 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Text Header Section */}
           <div className="text-center mb-10 space-y-2">
-            <h2 className="text-gray-300 font-bold text-sm sm:text-lg md:text-xl uppercase tracking-wide">
+            <h2 className="text-gray-400 font-bold text-sm sm:text-lg md:text-xl mb-4 uppercase tracking-wide">
               Adopt These 5 Strategies, You Will Never Face Loss In Business
             </h2>
             <h1 className="text-[#b79662] font-extrabold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight">
@@ -510,10 +518,15 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+<br />
+<br />
+      <SelectedWork  />
 
       <BookStore />
 
       <TestimonialSlider />
+
+      <Footer />
     </>
   );
 }

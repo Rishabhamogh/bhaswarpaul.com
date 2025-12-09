@@ -10,7 +10,8 @@ const books = [
     description: "Simple Techniques for Public Speaking and Communication Skills: How to become a Great Speaker, Influence People with Communication Skills and Own the Stage.",
     imageAlt: "Own The Stage Book Cover",
     buttonText: "Buy From Amazon",
-    imageSrc: "/assets/images/book-1.jpeg" 
+    imageSrc: "/assets/images/book-1.jpeg" ,
+    link: "https://www.amazon.in/Real-Estate-Mastery-Bhaswar-Paul-ebook/dp/B0DL38F29X/ref=sr_1_2?dib=eyJ2IjoiMSJ9.NKVmjFdx3fA54ndkvoK7XsNzTw1O2Ekhb2bOHuxu-O_GjHj071QN20LucGBJIEps.mlomRHVm6UPB7syFMB_aIqkTJhgI-M95goCfWY5gjkI&dib_tag=se&qid=1758549202&refinements=p_27%3ABhaswar+Paul&s=books&sr=1-2"
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const books = [
     description: "Do you wish to lose weight in 90 days so that you can improve your diabetes, feel younger and fitter like 20 years old? Are you wondering where to start?",
     imageAlt: "Weight Loss Journey Book Cover",
     buttonText: "Buy From Amazon",
-    imageSrc: "/assets/images/image.png" 
+    imageSrc: "/assets/images/image.png" ,
+    link: "https://www.amazon.in/Foundations-Real-Estate-Bhaswar-Paul/dp/9358476729/ref=sr_1_3?dib=eyJ2IjoiMSJ9.NKVmjFdx3fA54ndkvoK7XsNzTw1O2Ekhb2bOHuxu-O_GjHj071QN20LucGBJIEps.mlomRHVm6UPB7syFMB_aIqkTJhgI-M95goCfWY5gjkI&dib_tag=se&qid=1758549202&refinements=p_27%3ABhaswar+Paul&s=books&sr=1-3"
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ title: "EXPLORING REAL ESTATE FRONTIERS",
     description: "Well, you have come to the right place. If you asked any salesperson, they would tell you that there are hundreds of ways to close sales.",
     imageAlt: "Closing Your Sales Book Cover",
     buttonText: "Buy From Amazon",
-    imageSrc: "/assets/images/book-3.jpeg"
+    imageSrc: "/assets/images/book-3.jpeg",
+    link:"https://www.amazon.in/Exploring-Real-Estate-Frontiers-Bhaswar-ebook/dp/B0DL2C9HLN/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NKVmjFdx3fA54ndkvoK7XsNzTw1O2Ekhb2bOHuxu-O_GjHj071QN20LucGBJIEps.mlomRHVm6UPB7syFMB_aIqkTJhgI-M95goCfWY5gjkI&dib_tag=se&qid=1758549202&refinements=p_27%3ABhaswar+Paul&s=books&sr=1-1"
   },
   
 ];
@@ -60,10 +63,12 @@ const BookCard = ({ book }) => {
 
           <div>
             {/* Button: Gold Background */}
+            <a href={book.link} target="_blank" rel="noopener noreferrer" >
             <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-3 px-6 rounded shadow-md transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2 group text-sm sm:text-base">
               {book.buttonText}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
+            </a>
           </div>
         </div>
       </div>

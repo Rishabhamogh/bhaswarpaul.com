@@ -7,14 +7,14 @@ const testimonials = [
     id: 1,
     name: "Abhishek Tripathi",
     role: "Client",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&h=300&auto=format&fit=crop",
+    image: "/assets/images/book-1.jpeg",
     text: "Working with Mariox has been a transformative experience for our company. Their team has been instrumental in guiding our digital strategy and implementing innovative solutions that have significantly improved our business operations.",
   },
   {
     id: 2,
     name: "Anil Mehta",
     role: "Client",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&h=300&auto=format&fit=crop",
+    image: "/assets/images/book-1.jpeg",
     text: "My efforts in app development have changed massively thanks to Mariox. They have tremendously sophisticated technologies that I use to streamline campaigns, analyse data, and improve outcomes. I've had great growth and success because of their professional resources.",
   },
   {
@@ -113,7 +113,7 @@ const TestimonialSlider = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 pb-8">
           <div className="space-y-2">
              <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
-               Our Clients <span className="text-[#b79662]">{'{Love}'}</span> us
+               Our Clients <span className="text-[#b79662]">{'{Love}'}</span> Me
              </h2>
              <p className="text-gray-400 text-lg">See what our partners have to say</p>
           </div>
