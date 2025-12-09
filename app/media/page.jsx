@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Footer from '../layout/Footer';
+import Footer from '../layout/footer';
 import Header from '../layout/Header';
 
 // --- Sample Data ---
