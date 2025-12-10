@@ -32,6 +32,9 @@ import {
   Briefcase, 
   GraduationCap 
 } from 'lucide-react';
+import Head from 'next/head';
+import Header from '../layout/Header';
+import Footer from '../footer';
 
 // --- THEME CONSTANTS ---
 const THEME = {
@@ -92,6 +95,8 @@ export default function LandingPage() {
   const [openAccordion, setOpenAccordion] = useState(0);
 
   return (
+    <>
+    <Header />
     <main className={`min-h-screen ${THEME.bg} font-sans selection:bg-[#b79662] selection:text-white max-w-7xl mx-auto`}>
       
      
@@ -165,6 +170,8 @@ export default function LandingPage() {
 
 
     </main>
+    <Footer />
+    </>
   );
 }
 
