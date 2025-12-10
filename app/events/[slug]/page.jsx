@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation"; // Correct hook for App Router
-import Header from "../../layout/Header"; 
-import Footer from "../../layout/Footer"; 
+// import Header from "../../layout/Header"; 
+// import Footer from "../../layout/Footer"; 
 
 const EVENTS_API_URL = "https://uat-service.ireedindia.com/v1/events";
 
@@ -108,7 +108,7 @@ export default function EventDetailPage() {
 
   return (
     <div style={{ backgroundColor: "#ffffff", minHeight: "100vh", color: "#e5e7eb", fontFamily: "sans-serif" }}>
-      <Header />
+      {/* <Header /> */}
 
       {/* Main Container */}
       <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "40px 20px" }}>
@@ -296,7 +296,7 @@ export default function EventDetailPage() {
         </div>
       )}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
