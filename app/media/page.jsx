@@ -1,10 +1,59 @@
-import React from 'react';
+"use client"; // Required for interactivity
 
-import Footer from '../layout/footer';
+import React, { useState } from 'react';
+import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
 // --- Sample Data ---
 const newsArticles = [
+  {
+    id: 1,
+    image: "/assets/TEDx TAPMI/IMG_9698.jpg", 
+    source: "siliconindia.com",
+    title: "India's Best Business Coach, Mr. Suresh Mansharamani, shares proven methods to enhance profitability",
+    description: "In the challenging world of modern Indian business, profitability is not just a financial goal. It is a survival metric. Indian entrepreneurs and business owners are constantly searching...",
+    link: "#"
+  },
+  {
+    id: 2,
+    image: "/assets/images/book-1.jpeg",
+    source: "tribuneindia.com",
+    title: "Facing Business Scalability Challenges? Insights from India's Most Experienced Business Coach...",
+    description: "Scaling a business isn't just about growing bigger. It's about growing smarter. While growth usually means adding more—more clients, more revenue, more team members...",
+    link: "#"
+  },
+  {
+    id: 3,
+    image: "/assets/images/book-3.jpeg",
+    source: "prabhatkhabar.com",
+    title: "Success Story: ₹300 से शुरू हुआ सफर, 300 गुना ओवरसब्सक्राइब्ड IPO तक, जानिए सुरेश मंشارामानी का जुनून",
+    description: "सुरेश मंشارामानी ने ₹300 प्रति माह की नौकरी से शुरुआत की और 1995 में 300 गुना ओवरसब्सक्राइब्ड IPO के साथ अपनी कंपनी लिस्ट कराई...",
+    link: "#"
+  },
+  {
+    id: 4,
+    image: "/assets/TEDx TAPMI/IMG_9698.jpg",
+    source: "adgully.com",
+    title: "How AI & Automation are revolutionizing entrepreneurship",
+    description: "The entire world seems to be bowing down to the term called AI. The emergence of Artificial Intelligence (AI) and automation is transforming the entrepreneurial scene...",
+    link: "#"
+  },
+  {
+    id: 5,
+    image: "/assets/TEDx TAPMI/IMG_9698.jpg",
+    source: "pulsexpertech.com",
+    title: "Tajurba Builds a Bridge to the SME Exchange: Empowering 500 Indian SMEs to Scale, Raise Funds...",
+    description: "Tajurba, India's fastest-growing community of Small and Medium Enterprises (SMEs), has launched a transformative initiative aimed at helping over 500 promising Indian SMEs...",
+    link: "#"
+  },
+  {
+    id: 6,
+    image: "/assets/TEDx TAPMI/IMG_9698.jpg",
+    source: "couturefashion.net",
+    title: "Tajurba Builds a Bridge to the SME Exchange: Empowering 500 Indian SMEs to Scale, Raise Funds...",
+    description: "Tajurba, India's fastest-growing community of Small and Medium Enterprises (SMEs), has launched a transformative initiative aimed at helping over 500 promising Indian SMEs...",
+    link: "#"
+  },
   {
     id: 1,
     image: "/assets/images/Bhaswar-Paul.jpg", 
@@ -29,30 +78,7 @@ const newsArticles = [
     description: "सुरेश मंشارामानी ने ₹300 प्रति माह की नौकरी से शुरुआत की और 1995 में 300 गुना ओवरसब्सक्राइब्ड IPO के साथ अपनी कंपनी लिस्ट कराई...",
     link: "#"
   },
-  {
-    id: 4,
-    image: "https://via.placeholder.com/600x400?text=Article+4",
-    source: "adgully.com",
-    title: "How AI & Automation are revolutionizing entrepreneurship",
-    description: "The entire world seems to be bowing down to the term called AI. The emergence of Artificial Intelligence (AI) and automation is transforming the entrepreneurial scene...",
-    link: "#"
-  },
-  {
-    id: 5,
-    image: "https://via.placeholder.com/600x400?text=Article+5",
-    source: "pulsexpertech.com",
-    title: "Tajurba Builds a Bridge to the SME Exchange: Empowering 500 Indian SMEs to Scale, Raise Funds...",
-    description: "Tajurba, India's fastest-growing community of Small and Medium Enterprises (SMEs), has launched a transformative initiative aimed at helping over 500 promising Indian SMEs...",
-    link: "#"
-  },
-  {
-    id: 6,
-    image: "https://via.placeholder.com/600x400?text=Article+6",
-    source: "couturefashion.net",
-    title: "Tajurba Builds a Bridge to the SME Exchange: Empowering 500 Indian SMEs to Scale, Raise Funds...",
-    description: "Tajurba, India's fastest-growing community of Small and Medium Enterprises (SMEs), has launched a transformative initiative aimed at helping over 500 promising Indian SMEs...",
-    link: "#"
-  },
+  
 ];
 
 const videoTestimonials = [
@@ -102,23 +128,23 @@ const NewsCard = ({ article }) => (
 const TestimonialHero = () => (
   <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
     {/* Left Text Side: Background #4c4949 */}
-    <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16 lg:px-24 lg:py-20 flex flex-col justify-center relative overflow-hidden">
+    <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
       
       <div className="relative z-10">
         <span className="block text-[#b79662] font-bold tracking-widest uppercase mb-4 text-sm">
-          Testimonials
+          Pr and Media
         </span>
-        <h2 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-none text-white">
-          Here's What Our <br />
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-8 leading-none text-white">
+          After hours with Tajurba <br />
           <span className="text-[#b79662]">
-            Customers Have To Say
+           Baswar Paul in Media Coverage
           </span>
         </h2>
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
-          A vibrant network of entrepreneurs, business owners, and professionals united by a shared passion for growth and success. Whether you're seeking valuable connections, strategic partnerships, or collaborative opportunities, our network offers a dynamic platform to propel your business forward.
+          My weekdays start early — usually with a cup of tea and some reading," Mansharamani said. "I find that this quiet time in the morning helps set a productive tone for the day. The calmness of the early hours allows me to focus without distractions, whether it's diving into a good book or reflecting on my goals for the day. It’s become an essential part of my routine that fuels my energy and creativity throughout the busy workday.
         </p>
         <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-4 px-10 rounded shadow-md hover:shadow-lg transition-all duration-300 w-fit text-lg uppercase tracking-wide">
-          Join our community now
+          Read Article
         </button>
       </div>
     </div>
@@ -127,7 +153,7 @@ const TestimonialHero = () => (
     {/* Added 'group' class here so children can react to hover */}
     <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img 
-        src="/assets/images/Bhaswar-Paul.jpg" // Replace with actual image
+        src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
         alt="Suresh Mansharamani" 
         // The existing classes here will now work because of the parent 'group' class
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
@@ -167,47 +193,57 @@ const VideoCard = ({ video }) => (
 // --- Main Component ---
 
 const MediaSection = () => {
+  // State to manage visible articles
+  const [visibleCount, setVisibleCount] = useState(9); // Start with 9 items
+
+  // Handler to load more articles
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3); // Load 3 more
+  };
+
   return (
     <>
-    <Header />
-    <div className="bg-[#1e1e1e] flex flex-col">
+      <Header />
+      <div className="bg-white flex flex-col">
         {/* Section 2: Testimonial Hero */}
-      <TestimonialHero />
+        <TestimonialHero />
 
-      {/* Section 1: News Grid */}
-      <section className="py-20 px-4 md:px-8 lg:px-16 relative">
-        <div className="max-w-7xl mx-auto relative z-10">
-           <div className="text-center mb-14">
+        {/* Section 1: News Grid */}
+        <section className="py-10 px-4 md:px-8 lg:px-16 relative">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-10">
               <span className="text-[#b79662] font-bold tracking-wider uppercase mb-2 block">In The News</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Media <span className="text-[#b79662]">Coverage</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]">Media <span className="text-[#b79662]">Coverage</span></h2>
               <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
-           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsArticles.map(article => (
-              <NewsCard key={article.id} article={article} />
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+            
+            {/* Grid with Sliced Data */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {newsArticles.slice(0, visibleCount).map(article => (
+                <NewsCard key={article.id} article={article} />
+              ))}
+            </div>
 
-    
-
-      {/* Section 3: Video Grid */}
-      {/* <section className="py-20 px-4 md:px-8 lg:px-16 bg-[#1e1e1e] relative">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Our Clients <span className="text-[#b79662]">Testimonial</span></h2>
-              <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
-           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {videoTestimonials.map(video => (
-              <VideoCard key={video.id} video={video} />
-            ))}
+            {/* Load More Button - Conditional Rendering */}
+            {visibleCount < newsArticles.length && (
+              <div className="flex justify-center">
+                <button
+                  onClick={handleLoadMore}
+                  className="px-8 py-3 bg-[#b79662] hover:bg-[#967d51] text-white font-bold rounded shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider"
+                >
+                  Load More
+                </button>
+              </div>
+            )}
           </div>
-        </div>
-      </section> */}
-    </div>
-    <Footer />
+        </section>
+
+        {/* Section 3: Video Grid (Commented out in original, kept commented) */}
+        {/* <section className="py-20 px-4 md:px-8 lg:px-16 bg-[#1e1e1e] relative">
+          ...
+        </section> */}
+      </div>
+      <Footer />
     </>
   );
 };

@@ -1,14 +1,14 @@
-import React from 'react';
-import { 
-  FaMapMarkerAlt, 
-  FaEnvelope, 
-  FaPhoneAlt, 
-  FaFacebookF, 
-  FaTwitter, 
-  FaLinkedinIn, 
-  FaYoutube, 
-  FaInstagram 
-} from 'react-icons/fa';
+import React from "react";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,30 +22,28 @@ const Footer = () => {
 
       <footer className="bg-[#262626] text-gray-300 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 ">
-          
           {/* Main Grid Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            
             {/* Column 1: Bio & Logo */}
             <div className="space-y-6">
               {/* Logo Section */}
-<div className="flex flex-col items-start">
-  <img
-    src="/assets/images/logo.png"      // <-- put your logo image here
-    alt="Logo"
-    width={120}
-    height={50}
-    className="object-contain"
-  />
-</div>
+              <div className="flex flex-col items-start">
+                <img
+                  src="/assets/images/logo.png" // <-- put your logo image here
+                  alt="Logo"
+                  width={120}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
 
-              
               <p className="text-sm leading-7  text-gray-200">
-                Born in Port Blair, Andaman Nicobar Islands and brought up in New Delhi, 
-                Bhaswar Paul is a seasoned Sales, Marketing and Training professional 
-                with almost two decades of work experience. He has earned valuable 
-                exposure in India and overseas market in Education, IT/ITES Services 
-                and Real Estate Industry.
+                Born in Port Blair, Andaman Nicobar Islands and brought up in
+                New Delhi, Bhaswar Paul is a seasoned Sales, Marketing and
+                Training professional with almost two decades of work
+                experience. He has earned valuable exposure in India and
+                overseas market in Education, IT/ITES Services and Real Estate
+                Industry.
               </p>
             </div>
 
@@ -55,9 +53,19 @@ const Footer = () => {
                 Extra Links
               </h3>
               <ul className="space-y-3 text-[15px]">
-                {['About Us', 'Services', 'Contact Us', 'Apply Jobs', 'E-Book', 'Blogs'].map((item) => (
+                {[
+                  "About Us",
+                  "Services",
+                  "Contact Us",
+                  "Apply Jobs",
+                  "E-Book",
+                  "Blogs",
+                ].map((item) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-[#cba36f] transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-[#cba36f] transition-colors"
+                    >
                       {item}
                     </a>
                   </li>
@@ -74,16 +82,22 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
                   <p>
-                    IRIS Tech Park<br />
-                    Inhwa Business Center,<br />
-                    Sohna Road Sector-48,<br />
+                    IRIS Tech Park
+                    <br />
+                    Inhwa Business Center,
+                    <br />
+                    Sohna Road Sector-48,
+                    <br />
                     Gurugram - 122018 Haryana, India
                   </p>
                 </div>
-                
+
                 <div className="flex items-center gap-3">
                   <FaEnvelope className="text-white shrink-0" />
-                  <a href="mailto:info@bhaswarpaul.com" className="hover:text-[#cba36f]">
+                  <a
+                    href="mailto:info@bhaswarpaul.com"
+                    className="hover:text-[#cba36f]"
+                  >
                     info@bhaswarpaul.com
                   </a>
                 </div>
@@ -91,8 +105,18 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <FaPhoneAlt className="mt-1 text-white shrink-0" />
                   <div className="flex flex-col">
-                    <a href="tel:+919818837873" className="hover:text-[#cba36f]">+91 981 883 7873</a>
-                    <a href="tel:+919417631294" className="hover:text-[#cba36f]">+91 941 763 1294</a>
+                    <a
+                      href="tel:+919818837873"
+                      className="hover:text-[#cba36f]"
+                    >
+                      +91 981 883 7873
+                    </a>
+                    <a
+                      href="tel:+919417631294"
+                      className="hover:text-[#cba36f]"
+                    >
+                      +91 941 763 1294
+                    </a>
                   </div>
                 </div>
               </div>
@@ -103,7 +127,7 @@ const Footer = () => {
               <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
                 Follow Me
               </h3>
-              
+
               <button className="bg-[#cba36f] hover:bg-[#b08b5a] text-white px-6 py-2 rounded-sm mb-6 transition-colors border border-[#cba36f] text-sm">
                 Join Our Newsletter
               </button>
@@ -123,14 +147,21 @@ const Footer = () => {
         <div className="bg-black py-6 mt-8 border-t border-gray-800">
           <div className="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
             <p className="mb-4 md:mb-0 text-center md:text-left">
-              Copyright © 2018 Bhaswar Paul | Powered by <span className="text-[#cba36f]">MaitKon</span>
+              Copyright © 2018 Bhaswar Paul | Powered by{" "}
+              <span className="text-[#cba36f]">MaitKon</span>
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Disclaimers</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Disclaimers
+              </a>
               <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Privacy Policy
+              </a>
               <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Terms of Use
+              </a>
             </div>
           </div>
         </div>
@@ -141,8 +172,8 @@ const Footer = () => {
 
 // Helper Component for Social Icons
 const SocialIcon = ({ Icon, color }) => (
-  <a 
-    href="#" 
+  <a
+    href="#"
     className={`${color} w-10 h-10 flex items-center justify-center text-white rounded-sm hover:opacity-80 transition-opacity`}
   >
     <Icon size={18} />
