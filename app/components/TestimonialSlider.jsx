@@ -113,7 +113,7 @@ const TestimonialSlider = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 pb-8">
           <div className="space-y-2">
              <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
-               Our Clients <span className="text-[#b79662]">{'{Love}'}</span> Me
+               Our Clients <span className="text-[#b79662]">{'Testimonials'}</span> 
              </h2>
              <p className="text-gray-400 text-lg">See what our partners have to say</p>
           </div>
