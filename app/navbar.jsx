@@ -6,7 +6,7 @@ const Navbar = () => {
   // Configuration for links
   const navLinks = [
     { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'About', href: 'about-us' },
     { name: 'Events', href: '#', hasDropdown: true },
     { name: 'Services', href: '#', hasDropdown: true },
     { name: 'Testimonials', href: '#' },
