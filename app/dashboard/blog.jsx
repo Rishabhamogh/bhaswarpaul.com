@@ -49,7 +49,7 @@ const BlogManager = () => {
     altTag: '',
     date: new Date().toISOString().split('T')[0], 
     faq: [], 
-    published: true,
+    published: true, // Default to true
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -132,11 +132,29 @@ const BlogManager = () => {
     return isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
   };
 
+  // --- HANDLE INPUT CHANGE (FIXED FOR CHECKBOX) ---
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      // Correctly handle checkbox vs text input
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     const payload = { ...formData };
+    
+    // 1. Force Published to Boolean
+    payload.published = !!formData.published; 
+
+    // 2. Format Date
     payload.date = formatDateToISO(payload.date);
+    
+    // 3. Fallbacks
     payload.researchAssociate = payload.author;
     if (!payload.fullTitle) payload.fullTitle = payload.title;
     if (payload.image && typeof payload.image === 'object') {
@@ -145,11 +163,12 @@ const BlogManager = () => {
     if (!payload.websites || !Array.isArray(payload.websites) || payload.websites.length === 0) {
       payload.websites = ['bhaswarpaul'];
     }
+
+    // 4. Cleanup system fields
     delete payload._id;
     delete payload.createdAt;
     delete payload.updatedAt;
     delete payload.__v;
-    // Keeping userId as per your last request
 
     try {
       if (mode === 'create') {
@@ -176,9 +195,12 @@ const BlogManager = () => {
     setMode('edit');
     setEditId(blog._id);
     setActiveTab('form');
+    
+    // Deep copy and Ensure Boolean for published
     setFormData({
       ...initialFormState,
       ...blog,
+      published: !!blog.published, // FORCE BOOLEAN
       date: blog.date ? blog.date.split('T')[0] : new Date().toISOString().split('T')[0],
       websites: blog.websites && Array.isArray(blog.websites) ? blog.websites : ['bhaswarpaul'],
       faq: blog.faq || [],
@@ -199,11 +221,6 @@ const BlogManager = () => {
     setMode('create');
     setEditId(null);
     setFormData(initialFormState);
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const handleWebsiteChange = (site) => {
@@ -358,7 +375,7 @@ const BlogManager = () => {
                         <div className="space-y-3">
                             <label className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition">
                                 <span className="text-sm text-gray-600">Published</span>
-                                <input type="checkbox" name="published" checked={formData.published} onChange={handleInputChange} className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"/>
+                                <input type="checkbox" name="published" checked={!!formData.published} onChange={handleInputChange} className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"/>
                             </label>
                         </div>
                         <hr className="my-4 border-gray-100"/>
@@ -404,68 +421,68 @@ const BlogManager = () => {
         {/* ======================= TAB 2: LIBRARY (LIST) ======================= */}
         {activeTab === 'list' && (
           <div className="space-y-6">
-             <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center">
                 <h2 className="text-xl font-bold text-gray-900">Blog Library ({blogs.length})</h2>
                 <button onClick={fetchBlogs} className="flex items-center gap-2 text-xs font-bold text-gray-600 bg-white border border-gray-200 px-3 py-2 rounded-lg hover:bg-gray-50 transition shadow-sm">
                    <RefreshCcw className={`w-3 h-3 ${loading ? 'animate-spin' : ''}`} /> REFRESH
                 </button>
-             </div>
+              </div>
 
-             {loading ? (
-               <div className="flex flex-col justify-center items-center h-64 text-gray-400">
-                 <Loader2 className="w-8 h-8 animate-spin mb-2" /><p className="text-sm">Loading Blogs...</p>
-               </div>
-             ) : (
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                 {blogs.map((blog) => (
-                   <div key={blog._id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition group flex flex-col h-full">
+              {loading ? (
+                <div className="flex flex-col justify-center items-center h-64 text-gray-400">
+                  <Loader2 className="w-8 h-8 animate-spin mb-2" /><p className="text-sm">Loading Blogs...</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {blogs.map((blog) => (
+                    <div key={blog._id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition group flex flex-col h-full">
                       <div className="h-40 w-full bg-gray-100 relative overflow-hidden cursor-pointer" onClick={() => handleViewClick(blog)}>
-                         {blog.image ? (
-                           <img 
-                             src={getImageUrl(blog.image)}
-                             alt={blog.altTag || 'Blog'}
-                             className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                           />
-                         ) : (
+                          {blog.image ? (
+                            <img 
+                              src={getImageUrl(blog.image)}
+                              alt={blog.altTag || 'Blog'}
+                              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            />
+                          ) : (
                             <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-300">
                                 <ImageIcon size={32}/>
                             </div>
-                         )}
-                         <div className="absolute top-2 right-2">
-                            {blog.published ? 
+                          )}
+                          <div className="absolute top-2 right-2">
+                             {blog.published ? 
                                 <span className="bg-green-100/90 backdrop-blur text-green-700 text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">LIVE</span> : 
                                 <span className="bg-gray-100/90 backdrop-blur text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">DRAFT</span>
-                            }
-                         </div>
+                             }
+                          </div>
                       </div>
 
                       <div className="p-4 flex-1 flex flex-col">
-                         <div className="flex items-center gap-2 mb-2">
+                          <div className="flex items-center gap-2 mb-2">
                             <span className="text-[10px] text-gray-400 uppercase font-medium">{new Date(blog.date).toLocaleDateString()}</span>
-                         </div>
-                         
-                         <h3 onClick={() => handleViewClick(blog)} className="font-bold text-gray-900 leading-snug mb-2 line-clamp-2 text-sm cursor-pointer hover:text-blue-600">
-                           {blog.title || "Untitled Blog"}
-                         </h3>
-                         
-                         <p className="text-xs text-gray-500 line-clamp-3 mb-4">
-                            {stripHtml(blog.description || blog.content)}
-                         </p>
+                          </div>
+                          
+                          <h3 onClick={() => handleViewClick(blog)} className="font-bold text-gray-900 leading-snug mb-2 line-clamp-2 text-sm cursor-pointer hover:text-blue-600">
+                            {blog.title || "Untitled Blog"}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-500 line-clamp-3 mb-4">
+                             {stripHtml(blog.description || blog.content)}
+                          </p>
 
-                         <div className="flex justify-between items-center pt-3 border-t border-gray-100 mt-auto">
+                          <div className="flex justify-between items-center pt-3 border-t border-gray-100 mt-auto">
                             <button onClick={() => handleViewClick(blog)} className="text-gray-500 hover:text-blue-600 text-xs font-bold flex items-center gap-1 transition">
                               <Eye className="w-3 h-3" /> View
                             </button>
                             <button onClick={() => handleEditClick(blog)} className="text-blue-600 hover:text-blue-800 text-xs font-bold flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition">
                               Edit <Edit2 className="w-3 h-3" />
                             </button>
-                         </div>
+                          </div>
                       </div>
-                   </div>
-                 ))}
-                 {blogs.length === 0 && <div className="col-span-full text-center text-gray-400 py-10">No blogs found.</div>}
-               </div>
-             )}
+                    </div>
+                  ))}
+                  {blogs.length === 0 && <div className="col-span-full text-center text-gray-400 py-10">No blogs found.</div>}
+                </div>
+              )}
           </div>
         )}
 
@@ -485,29 +502,29 @@ const BlogManager = () => {
                   
                   {/* HERO IMAGE */}
                   <div className="h-64 md:h-80 w-full bg-gray-100 relative">
-                     {selectedBlog.image ? (
+                      {selectedBlog.image ? (
                         <img src={getImageUrl(selectedBlog.image)} alt="Cover" className="w-full h-full object-cover" />
-                     ) : (
+                      ) : (
                         <div className="w-full h-full flex items-center justify-center text-gray-300">No Cover Image</div>
-                     )}
-                     <div className="absolute top-6 right-6">
+                      )}
+                      <div className="absolute top-6 right-6">
                         {selectedBlog.published ? 
                            <span className="bg-green-500 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm uppercase tracking-wide">Published</span> : 
                            <span className="bg-gray-500 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm uppercase tracking-wide">Draft</span>
                         }
-                     </div>
-                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
                         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{selectedBlog.title}</h1>
                         <div className="flex items-center gap-4 text-white/80 text-sm">
                            <span className="flex items-center gap-1"><Calendar className="w-4 h-4"/> {new Date(selectedBlog.date).toLocaleDateString()}</span>
                            <span className="flex items-center gap-1 text-white"><PenTool className="w-4 h-4"/> {selectedBlog.researchAssociate || selectedBlog.author || "Unknown Author"}</span>
                         </div>
-                     </div>
+                      </div>
                   </div>
 
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8">
-                     {/* LEFT COLUMN - CONTENT */}
-                     <div className="lg:col-span-8 p-8 border-b lg:border-b-0 lg:border-r border-gray-100">
+                      {/* LEFT COLUMN - CONTENT */}
+                      <div className="lg:col-span-8 p-8 border-b lg:border-b-0 lg:border-r border-gray-100">
                         <h3 className="text-sm font-bold text-gray-400 uppercase mb-4 tracking-wider">Main Content</h3>
                         <div 
                            className="prose prose-lg max-w-none text-gray-800"
@@ -528,10 +545,10 @@ const BlogManager = () => {
                               </div>
                            </div>
                         )}
-                     </div>
+                      </div>
 
-                     {/* RIGHT COLUMN - META */}
-                     <div className="lg:col-span-4 p-8 bg-gray-50/50 h-full">
+                      {/* RIGHT COLUMN - META */}
+                      <div className="lg:col-span-4 p-8 bg-gray-50/50 h-full">
                         <h3 className="text-sm font-bold text-gray-400 uppercase mb-6 tracking-wider">Meta & SEO</h3>
                         
                         <div className="space-y-6">
@@ -570,7 +587,7 @@ const BlogManager = () => {
                               </div>
                            </div>
                         </div>
-                     </div>
+                      </div>
                   </div>
                </div>
             </div>

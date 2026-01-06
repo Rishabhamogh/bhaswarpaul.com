@@ -7,10 +7,10 @@ const Header = () => {
 
   // Configuration for links
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: 'about' },
-    { name: 'Events', href: '#', hasDropdown: true },
-    { name: 'Services', href: '#', hasDropdown: true },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Events', href: '/events',  hasDropdown: false },
+    { name: 'Services', href: '/services ', hasDropdown: false },
     { name: 'Testimonials', href: '/testimonial' },
     { name: 'Network', href: '/network' },
     { name: 'Blogs', href: '/blog' },

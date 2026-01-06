@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from "react";
 import TestimonialSlider from "./components/TestimonialSlider";
 import BookStore from "./components/BookStore";
 import Header from "./layout/Header";
-import Footer from "./layout/footer";
+// import Footer from "./layout/Footer";
 import SelectedWork from "./components/SelectedWork";
 
 // --- Updated Service Card for Dark Theme ---
@@ -201,7 +201,7 @@ export default function HeroSection() {
     description:
       "In a world where success is often reserved for the privileged, Business Coach Suresh Mansharamani was born in a refugee camp in Maharashtra. He started his journey with a job career of just Rs 300/month to making his company 300 times oversubscribed IPO in 1996 and getting listed at the Bombay Stock Exchange. Followed by a Presidential Award, he is now a Certified Gallup Strengths Coach, Business Coach in India, Best OKR Coach, Best SME Coach, Best Sales Trainer, Best SME IPO Coach, Best Motivational Speakers and Author of seven Books.",
     buttonText: "Read More",
-    imageUrl: "/assets/images/Bhaswar-Paul.jpg",
+    imageUrl: "/assets/TEDx TAPMI/Tanky You - TEDX & TAPMI.png",
     imageAlt: "Bhaswar Paul speaking into a microphone",
   };
 
@@ -510,7 +510,7 @@ export default function HeroSection() {
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-[#4c4949] bg-black">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/amFIbFAZx4A"
+              src="https://www.youtube.com/embed/NYbFAiZgvAM"
               title="Suresh Mansharamani Business Strategy Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -526,7 +526,7 @@ export default function HeroSection() {
 
       <TestimonialSlider />
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

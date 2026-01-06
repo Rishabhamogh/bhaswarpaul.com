@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Header from '../layout/Header';
-import Footer from '../layout/Footer';
+// import Footer from '../layout/Footer';
 import TestimonialSlider from '../components/TestimonialSlider';
 
 // Mock Data: Added more items to demonstrate Load More functionality
@@ -29,9 +29,55 @@ const VideoTestimonials = () => {
     setVisibleCount((prevCount) => prevCount + 3);
   };
 
+  const TestimonialHero = () => (
+  <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
+    {/* Left Text Side: Background #4c4949 */}
+    <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
+      
+      <div className="relative z-10">
+        <span className="block text-[#b79662] font-bold tracking-widest uppercase mb-4 text-sm">
+          Testimonials
+        </span>
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-8 leading-none text-white">
+          Here's What Our <br />
+          <span className="text-[#b79662]">
+            Customers Have To Say
+          </span>
+        </h2>
+        <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
+          A vibrant network of entrepreneurs, business owners, and professionals united by a shared passion for growth and success. Whether you're seeking valuable connections, strategic partnerships, or collaborative opportunities, our network offers a dynamic platform to propel your business forward.
+        </p>
+        <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-4 px-10 rounded shadow-md hover:shadow-lg transition-all duration-300 w-fit text-lg uppercase tracking-wide">
+          Join our community now
+        </button>
+      </div>
+    </div>
+
+    {/* Right Image Side with Theme Overlay */}
+    {/* Added 'group' class here so children can react to hover */}
+    <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
+      <img 
+        src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
+        alt="Suresh Mansharamani" 
+        // The existing classes here will now work because of the parent 'group' class
+        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+      />
+      
+      {/* Overlay: Gold tint with multiply blend mode */}
+      {/* Added group-hover:opacity-0 and transition so the tint fades out on hover, revealing true colors */}
+      <div className="absolute inset-0 bg-[#b79662]/60 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500"></div>
+      
+      {/* Texture */}
+      <div className="absolute inset-0 opacity-20 z-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+    </div>
+  </section>
+);
+
   return (
     <>
     <Header />
+    <TestimonialHero />
+    {/* Video Testimonials Section */}
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
@@ -87,7 +133,7 @@ const VideoTestimonials = () => {
       </div>
     </section>
     <TestimonialSlider />
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 };

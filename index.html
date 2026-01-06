@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gurgaon Skyline - Luxury Residences</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Playfair+Display:wght@400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eecd2b",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #221f10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #484223;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #eecd2b;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e5e7eb] dark:border-[#484223] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 sm:h-20 items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-[#111418] dark:text-white font-display">Gurgaon Skyline</h2>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#overview">Overview</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#residences">Residences</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#amenities">Amenities</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#gallery">Gallery</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- CTA -->
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-yellow-400 text-background-dark text-sm font-bold transition-all duration-300">
+                        Enquire Now
+                    </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-current">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative flex min-h-[85vh] w-full flex-col justify-center items-center overflow-hidden">
+<!-- Background Image with Gradient Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background-dark z-10"></div>
+<div class="h-full w-full bg-cover bg-center bg-no-repeat" data-alt="Stunning night view of Gurgaon city skyline with lit up high-rise buildings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5zEhpI-twqRQWdKnNqidCK_4iSZ5cXFU9uzZITEDOO2gkqVwRdhh3w25ru9MJM2FTPjvKlNId9ev3shmdSBcpzkyLvaWVZ6Crb2OIU0l9yKvKU0WHyYVKBwqUvjgNWaeO15zA-rgMxWODOuYOco-I7AIgpafy6Jo6bLWsIItDmRjRSjctP1mKkTWviKzc2xXberIC5LJE3o7IB_qUAZ3upafNrOVJpP0AnrT-Nzx-1j0Y8Uj3oJFvy9bKe9vw7HPy0OIJ1LANkDM");'>
+</div>
+</div>
+<div class="relative z-20 container mx-auto px-4 flex flex-col items-center text-center max-w-4xl">
+<span class="mb-4 inline-block rounded-full bg-primary/20 border border-primary/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary backdrop-blur-sm">
+                Launching Soon
+            </span>
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-tight text-white mb-6 drop-shadow-lg">
+                The Pinnacle of <br/><span class="text-primary italic">Urban Luxury</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light leading-relaxed">
+                Experience a life of uncompromised elegance in the heart of Gurgaon. 
+                Where architectural mastery meets bespoke living.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-yellow-400 text-background-dark text-base font-bold min-w-[180px] transition-all">
+                    View Residences
+                </button>
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-base font-bold min-w-[180px] backdrop-blur-sm transition-all">
+                    Download Brochure
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 z-20 animate-bounce text-white/50">
+<span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="relative z-30 -mt-16 px-4">
+<div class="max-w-[1100px] mx-auto bg-white dark:bg-[#2a2715] rounded-xl shadow-2xl border border-gray-100 dark:border-[#484223] p-8 md:p-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-[#484223]">
+<div class="flex flex-col items-center text-center gap-1 pt-6 md:pt-0">
+<p class="text-4xl font-serif text-[#111418] dark:text-white">25</p>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Acres of Land</p>
+</div>
+<div class="flex flex-col items-center text-center gap-1 pt-6 md:pt-0">
+<p class="text-4xl font-serif text-[#111418] dark:text-white">4</p>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">High-Rise Towers</p>
+</div>
+<div class="flex flex-col items-center text-center gap-1 pt-6 md:pt-0">
+<p class="text-4xl font-serif text-[#111418] dark:text-white">80%</p>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Open Green Space</p>
+</div>
+<div class="flex flex-col items-center text-center gap-1 pt-6 md:pt-0">
+<p class="text-4xl font-serif text-[#111418] dark:text-white">50+</p>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Luxury Amenities</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision / Overview -->
+<section class="py-20 md:py-32" id="overview">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+<div class="w-full lg:w-1/2 relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary hidden md:block"></div>
+<div class="w-full aspect-[4/5] md:aspect-square bg-cover bg-center rounded-lg overflow-hidden shadow-2xl" data-alt="Modern high-rise building architectural rendering during sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVYoERh_nKWBrU5XjXK8BIugzMrZvmH6Wpss0RYkYssWDFlcFp7i-lp6X-h_-3tOn5C5M3m4xuYVHszCNevZ0Vv4Hd8wovIQ6mSIOpt8c0W9Fe-teG26oSksiQei408S2Z5FNZpm_HA1XVeXjJIsVhFrxr9fJpUQiiLTPjXmttHWks7VD1hgTyO4WWiewdTRm-RyT7quFx6ApUYSJg9we5V48brcvGslp0769ruY-q7KG-n04PzBlL12DumqdoxhoMC6MDuUAm8Pw");'>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-background-dark border border-[#484223] rounded-lg p-6 hidden md:flex flex-col justify-center shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">workspace_premium</span>
+<p class="text-white text-sm font-medium">Award Winning<br/>Architecture Design</p>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<h3 class="text-primary font-bold uppercase tracking-widest text-sm">The Vision</h3>
+<h2 class="font-serif text-4xl md:text-5xl leading-tight text-[#111418] dark:text-white">
+                        Redefining the <br/> Skyline of Gurgaon
+                    </h2>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                        Gurgaon Skyline isn't just a residence; it's a statement. Situated at the intersection of connectivity and tranquility, our towers rise above the noise to offer a sanctuary of peace. 
+                    </p>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                        Designed by world-renowned architects, every inch of space is meticulously planned to maximize natural light, ventilation, and breathtaking views of the Aravallis.
+                    </p>
+<div class="pt-4">
+<a class="inline-flex items-center text-primary font-bold hover:underline decoration-2 underline-offset-4" href="#">
+                            Read Our Story
+                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Amenities -->
+<section class="py-20 bg-white dark:bg-[#1a180c]" id="amenities">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h3 class="text-primary font-bold uppercase tracking-widest text-sm mb-3">Amenities</h3>
+<h2 class="font-serif text-3xl md:text-4xl text-[#111418] dark:text-white mb-6">World-Class Privileges</h2>
+<p class="text-gray-600 dark:text-gray-400">Curated specifically for the global citizen, our amenities redefine the concept of leisure and wellness.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Amenity Card 1 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">pool</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">Infinity Sky Pool</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Float above the city in our temperature-controlled infinity pool offering panoramic views.</p>
+</div>
+<!-- Amenity Card 2 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">State-of-the-Art Gym</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Equipped with the latest Technogym equipment and dedicated spaces for yoga and pilates.</p>
+</div>
+<!-- Amenity Card 3 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">Wellness Spa</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">A sanctuary for your senses with steam, sauna, and private massage therapy rooms.</p>
+</div>
+<!-- Amenity Card 4 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">local_bar</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">Clubhouse &amp; Lounge</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Exclusive residents' lounge with a private bar, library, and business center.</p>
+</div>
+<!-- Amenity Card 5 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">park</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">Landscaped Gardens</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">25 acres of lush greenery, jogging tracks, and zen gardens designed by landscape experts.</p>
+</div>
+<!-- Amenity Card 6 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-[#221f10] border border-gray-100 dark:border-[#332f1a] hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">security</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-[#111418] dark:text-white font-serif">5-Tier Security</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Advanced security systems including biometric access and 24/7 surveillance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Floor Plans / Residences -->
+<section class="py-20 md:py-24" id="residences">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h3 class="text-primary font-bold uppercase tracking-widest text-sm mb-3">The Residences</h3>
+<h2 class="font-serif text-3xl md:text-4xl text-[#111418] dark:text-white">Exquisite Layouts</h2>
+</div>
+<div class="flex gap-2 p-1 bg-white dark:bg-[#2a2715] rounded-lg border border-gray-200 dark:border-[#484223]">
+<button class="px-6 py-2 rounded-md bg-primary text-background-dark font-bold text-sm">3 BHK</button>
+<button class="px-6 py-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-[#111418] dark:hover:text-white font-medium text-sm transition-colors">4 BHK</button>
+<button class="px-6 py-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-[#111418] dark:hover:text-white font-medium text-sm transition-colors">Penthouse</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a180c] rounded-2xl overflow-hidden border border-gray-200 dark:border-[#332f1a] shadow-xl">
+<div class="flex flex-col lg:flex-row">
+<!-- Floor Plan Image -->
+<div class="w-full lg:w-3/5 p-8 md:p-12 bg-gray-50 dark:bg-[#252213] flex items-center justify-center">
+<img alt="2D Architectural floor plan of a 3 BHK luxury apartment" class="max-h-[400px] w-auto mix-blend-multiply dark:mix-blend-normal dark:invert dark:opacity-80 transition-all hover:scale-105 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6OUEs-bCdSmTKuvmcm-4i-whJ0r9h5hQnYlCKHQlDqYlJ3pU7Ct9x6R-azbAXp0dLYkTYhy8G8FtUWMPJ-YGlWEdFp5Pdrr79fRvnAs4dFaZTUNR-gn3rGkOFkI7FrjyOew7dorz2Ltr_emi9vrk_W9tTxgelmRKU2sJtshzoS8VflmtgBTE4wqb6iLII2V8Wz75M1n_9sCtnjwMpBOxsG2th0dcC7aV_3Acuh8E9Y6d2epkLN1j1jWpK8rwJj-5MoofyK1Kjzs"/>
+</div>
+<!-- Details -->
+<div class="w-full lg:w-2/5 p-8 md:p-12 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-[#332f1a]">
+<h3 class="text-2xl font-serif text-[#111418] dark:text-white mb-2">Luxury 3 BHK Residence</h3>
+<p class="text-primary font-bold text-lg mb-6">Starting from ₹4.5 Cr*</p>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between border-b border-gray-100 dark:border-[#332f1a] pb-3">
+<span class="text-gray-500 dark:text-gray-400">Super Area</span>
+<span class="font-bold text-[#111418] dark:text-white">2,450 Sq. Ft.</span>
+</div>
+<div class="flex justify-between border-b border-gray-100 dark:border-[#332f1a] pb-3">
+<span class="text-gray-500 dark:text-gray-400">Carpet Area</span>
+<span class="font-bold text-[#111418] dark:text-white">1,850 Sq. Ft.</span>
+</div>
+<div class="flex justify-between border-b border-gray-100 dark:border-[#332f1a] pb-3">
+<span class="text-gray-500 dark:text-gray-400">Balconies</span>
+<span class="font-bold text-[#111418] dark:text-white">3 (Wide Decks)</span>
+</div>
+<div class="flex justify-between border-b border-gray-100 dark:border-[#332f1a] pb-3">
+<span class="text-gray-500 dark:text-gray-400">Facing</span>
+<span class="font-bold text-[#111418] dark:text-white">Golf Course / Pool</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-4 bg-transparent border border-primary text-primary hover:bg-primary hover:text-background-dark text-sm font-bold transition-all uppercase tracking-wide">
+                            Download Floor Plan
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-20 bg-background-light dark:bg-[#15130b]" id="gallery">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="mb-12">
+<h3 class="text-primary font-bold uppercase tracking-widest text-sm mb-3">Gallery</h3>
+<h2 class="font-serif text-3xl md:text-4xl text-[#111418] dark:text-white">Glimpses of Grandeur</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[280px]">
+<div class="md:col-span-2 row-span-2 rounded-lg overflow-hidden group relative">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Interior of a luxury living room with double height ceiling and chandelier" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEVhuVke12qVnqVlR9z-pVDYEGTtr4CuJTff9OVKGyIB6UutoLFO9QPGuuaasieExm6XgZeHy-G2kyTkOpt8PutfyK-IzlJEz7JTMyMT0qrW1_j1J4Hr2NWGi3wXAPWmGSNjF-ycXZ1Yy7Lu9ae_PV1mCY82Bwlhi8B0H-d8gXkx3Xep5FbPzPhI-86x7OgyPHov4Fl0hoTY5Qv3u7W2s7KRFrwcm8Uqyw2ekzR1DReKFFgHHllE7KF9gBX624azY949kP2KMoykM");'>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden group relative">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern spacious kitchen with marble countertops" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_T0EyVIC_ifFvfLRmyWYFaexjfwTkx5aodVEhD8GLzpznKxYfzuXJNaMNOyuK_hHbD6InCwyReF_52I7fbRxylJGoYWPiQc1pEWzQ1tIKfSuJ4fqsxzWP5rjokyJthTrZWLSj01eP3gzKReZU_MUeBPr-DR_kTM4pht_azCm9VFfQ5yur2UD5MJ-_HSv8sOxxZfl0EKoe9NqKKMwMh96rDOLqCL9i5rWX0pezOnsXZcx9ltHrGBaOhs5bNW3024NbOH57B-rTFW0");'>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden group relative">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Luxurious bedroom with large windows and city view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvTeMdFH6m6G0uzM0PaRd-zRV8zBVmoabaZE_S-l8XO6YPF-u9BooKktc12Lgc7UsRnS_2EVpUiGMO4eTcmdxLxZPF7UlY72sUUxzUbNZUw38K_Ut7WymXHvIrRm7gtEwj6uQ5Q2yhBA9PoYtCc08d55-aku2-IZuY9i2LbGqwf6gT3V99fpk6_EJ3DDQSbHYoMmxISqJilIAjP98Kcy0h1l0p7IpiDM2xDXK77KZTSCHJM2917ep8ftAAN-u18C0EWt62Z-ssFws");'>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden group relative">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Evening view of the building facade with lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC49YaMtwTBWdo_oK3BQIaVLsxWpONQFc-QAqxfOmwQ4LNJvKjDWeaDflDBpQntRrRLjzz6dF7WB7_X7asmdre3qy9O_Lj0eYpXkC_9GWvtoS1VcURq_jgnFrfQAZYHt7xy01fgXsrdLuYNI7CAZ7IyM4x_sSc3HYZqcvJdOSWB6Fg4IL0ISiJpnYfxLdkhyjz_FUWUlUt2eX0ZItS6Q5dlUnvzDNumaVlf8M3m_Vz_wAQmsgaHdTvsuRFeJVKK62Tw7H51LYKOFTI");'>
+</div>
+</div>
+<div class="md:col-span-2 rounded-lg overflow-hidden group relative">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Elegant bathroom with bathtub and premium fittings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDadnFTWneVH_FuPCf8rvJu-ewUlB3j1gdJ1_OXBUcvmExdTLogidTCsSYQxKjGTXeSnjQ1hot93DIgI5gKdUygo4orVOm4IPFdLvWWoyO7T4bM7Lo8_F-dDXdObgo5gmJmaP89CzW1Xvg7BM5iJF_X6pTyu83_B1phS5b26JMKk86debjvtLFbnWgsIt47CIxkPhy6farVom_VvPWtr8oT_REh9JIjKM25hTTy2GWtVPyNN1EyF_kSwGUQOgYYtuIOOlyWIt8wGYQ");'>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location -->
+<section class="py-20">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="bg-white dark:bg-[#221f10] rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-[#332f1a]">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 min-h-[400px] relative bg-gray-200">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" data-alt="Map showing location of Gurgaon Skyline project near major landmarks" data-location="Gurgaon, India" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNe-vf4e9z4QjLAFnNnqqeOBlJ-hth8b2_bjkD2OkgoKBstTcG5qTvih9WdP0ZP0kNFByRh4jCEXCo4g7v3QEmEf-Ft6BDgFaLAWeGqKjAc1S585Jn8Oit9HoGIh6BydPS9ZC5AVJI_Ng4fAWMB4SgeAMTGnf-vo2urLuyT-rRUQwwWUn0BX7NGyuUi5dBgimsWXBXJ1RVoiFti_DmcqGeDl7Umve0g2BatZ6MHkZhzLQGTc_93pVC3x97BMvNcOGZtwCSOHxZRDQ");'>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary text-background-dark px-4 py-2 rounded-lg shadow-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined">location_on</span>
+                                Sector 42, Gurgaon
+                             </div>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
+<h3 class="text-primary font-bold uppercase tracking-widest text-sm mb-3">Location</h3>
+<h2 class="font-serif text-3xl md:text-4xl text-[#111418] dark:text-white mb-8">Strategic Connectivity</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="bg-primary/20 p-2 rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-xl">flight</span>
+</div>
+<div>
+<p class="font-bold text-[#111418] dark:text-white text-lg">IGI Airport</p>
+<p class="text-gray-500 text-sm">20 Minutes Drive</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/20 p-2 rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-xl">business_center</span>
+</div>
+<div>
+<p class="font-bold text-[#111418] dark:text-white text-lg">Cyber City</p>
+<p class="text-gray-500 text-sm">10 Minutes Drive</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/20 p-2 rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-xl">golf_course</span>
+</div>
+<div>
+<p class="font-bold text-[#111418] dark:text-white text-lg">DLF Golf Course</p>
+<p class="text-gray-500 text-sm">5 Minutes Drive</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / CTA -->
+<footer class="bg-background-dark text-white pt-20 pb-10 border-t border-[#332f1a]" id="contact">
+<div class="container mx-auto px-4 md:px-8 max-w-[1280px]">
+<div class="flex flex-col lg:flex-row gap-16 mb-20">
+<!-- CTA Area -->
+<div class="w-full lg:w-5/12">
+<h2 class="font-serif text-4xl mb-6">Own a piece of the <span class="text-primary">Skyline</span></h2>
+<p class="text-gray-400 mb-8 text-lg">Register your interest today to receive exclusive pre-launch offers and priority site visits.</p>
+<form class="space-y-4">
+<input class="w-full h-12 px-4 rounded-lg bg-[#2a2715] border border-[#484223] text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="Your Name" type="text"/>
+<input class="w-full h-12 px-4 rounded-lg bg-[#2a2715] border border-[#484223] text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="Email Address" type="email"/>
+<div class="flex gap-4">
+<input class="w-full h-12 px-4 rounded-lg bg-[#2a2715] border border-[#484223] text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="+91 Phone Number" type="tel"/>
+<button class="h-12 px-8 bg-primary hover:bg-yellow-400 text-background-dark font-bold rounded-lg transition-colors whitespace-nowrap">
+                                Request Call
+                            </button>
+</div>
+</form>
+</div>
+<!-- Links Area -->
+<div class="w-full lg:w-7/12 flex flex-col md:flex-row gap-12 lg:justify-end">
+<div>
+<h4 class="text-primary font-bold uppercase tracking-wider text-sm mb-6">Project</h4>
+<ul class="space-y-4 text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Overview</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Residences</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Amenities</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-bold uppercase tracking-wider text-sm mb-6">Legal</h4>
+<ul class="space-y-4 text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Use</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">RERA Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Disclaimer</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-bold uppercase tracking-wider text-sm mb-6">Contact Us</h4>
+<ul class="space-y-4 text-gray-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> +91 98765 43210</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> sales@gurgaonskyline.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Sector 42, Golf Course Road,<br/>Gurgaon, Haryana 122002</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-[#332f1a] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-500 text-sm">© 2023 Gurgaon Skyline. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-gray-500 hover:text-primary" href="#"><i class="fa-brands fa-facebook"></i></a> <!-- Assuming fontawesome or similar if available, fallback to text/icon -->
+<span class="text-gray-600 text-xs">RERA Reg: GGM/2023/001</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
